@@ -1,0 +1,28 @@
+<!-- shop/templates/shop/index.html -->
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>Our Products</h2>
+<ul>
+    {% for product in products %}
+    <li>
+        <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>Price: ₹{{ product.price }}</p>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% for product in products %}
+    <div class="product-item">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>Price: ₹{{ product.price }}</p>
+        <a href="{{ product.link }}" target="_blank">
+            <button>View on Flipkart</button>
+        </a>
+    </div>
+{% endfor %}

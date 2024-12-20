@@ -1,0 +1,9 @@
+<!-- shop/templates/shop/product_detail.html -->
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>{{ product.name }}</h2>
+<img src="{{ product.image.url }}" alt="{{ product.name }}">
+<p>{{ product.description }}</p>
+<p>Price: ₹{{ product.price }}</p>
+<a href="/">Back to Products</a>
+{% endblock %}

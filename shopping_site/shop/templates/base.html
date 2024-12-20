@@ -1,0 +1,65 @@
+<!-- shop/templates/shop/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Site</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Shopping Site</h1>
+        <nav>
+            <a href="https://www.flipkart.com/" target="_blank" rel="noopener noreferrer">Visit Flipkart</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+        {% extends 'base.html' %}
+
+{% block title %}Shop - Casual Shirts and Sneakers{% endblock %}
+
+{% block content %}
+    <h1>Men's Casual Shirts and Sneakers</h1>
+
+    <div class="product-list">
+        <!-- Flipkart Product 1 -->
+        <div class="product-item">
+            <img src="{% static 'images/jackbella_pink_shirt.jpg' %}" alt="Jackbella Pink Shirt">
+            <h2>Jackbella Pink Shirt</h2>
+            <p>Price: ₹1200</p>
+            <a href="https://www.flipkart.com/mens-casual-shirts/pr?sid=clo,ash,axc,mmk,kp7&fm=neo%2Fmerchandising&iid=M_cb0444c5-84d8-441a-b39a-f21657e0f377_1_372UD5BXDFYS_MC.S4ITKV5A4VL6&otracker=hp_rich_navigation_3_1.navigationCard.RICH_NAVIGATION_Fashion~Men%27s%2BTop%2BWear~Men%27s%2BCasual%2BShirts_S4ITKV5A4VL6&otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_3_L2_view-all&cid=S4ITKV5A4VL6" target="_blank">
+                <button>View on Flipkart</button>
+            </a>
+        </div>
+
+        <!-- Flipkart Product 2 -->
+        <div class="product-item">
+            <img src="{% static 'images/sneakers.jpg' %}" alt="Aadi Synthetic Leather Sneakers">
+            <h2>Aadi Synthetic Leather Sneakers</h2>
+            <p>Price: ₹1499</p>
+            <a href="https://www.flipkart.com/aadi-synthetic-leather-lightweight-comfort-summer-trendy-walking-outdoor-daily-use-sneakers-men/p/itma442bf9226209?pid=SHOGDZZEGAXF3VHQ&lid=LSTSHOGDZZEGAXF3VHQIVCD02&marketplace=FLIPKART&fm=productRecommendation%2Fsimilar&iid=en_qGEfexCbPiBp8hZCg8iaM2Vg_y1TGfobyFVst8nkzqH0sl9EtnmFhDUu1nYKKu62XSA0iC6loJNYVxIwPklmfGe0ATFjrepVPAfIpdh-Gww%3D&ppt=pp&ppn=pp&ssid=l0u0jqz6000000001734714068704&otracker=pp_reco_Similar%2BProducts_5_32.productCard.PMU_HORIZONTAL_aadi%2BSynthetic%2BLeather%2B%257CLightweight%257CComfort%257CSummer%257CTrendy%257CWalking%257COutdoor%257CDaily%2BUse%2BSneakers%2BFor%2BMen_316691461_productRecommendation%2Fsimilar_4&otracker1=pp_reco_PINNED_productRecommendation%2Fsimilar_Similar%2BProducts_GRID_productCard_cc_5_NA_view-all&cid=316691461" target="_blank">
+                <button>View on Flipkart</button>
+            </a>
+        </div>
+
+        <!-- Amazon Product 1 -->
+        <div class="product-item">
+            <img src="{% static 'images/amazon_product1.jpg' %}" alt="Amazon Product 1">
+            <h2>Example Amazon Product</h2>
+            <p>Price: ₹999</p>
+            <a href="https://www.amazon.in/dp/B07Y5C1BGJ" target="_blank">
+                <button>View on Amazon</button>
+            </a>
+        </div>
+
+        <!-- More product items can go here as needed -->
+    </div>
+{% endblock %}
+
+    </main>
+</body>
+</html>
